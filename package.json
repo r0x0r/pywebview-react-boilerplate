@@ -1,0 +1,47 @@
+{
+  "name": "pywebview-react-boilerplate",
+  "version": "1.0.0",
+  "description": "A simple boilerplate to get started with pywebview and React",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && npm run frontend:prod && run-script-os",
+    "build:macos": "source venv-pywebview/bin/activate; python build-macos.py py2app",
+    "build:windows": "pyinstaller src/main.py",
+    "clean": "rm -rf dist",
+    "dev": "parcel serve src/index.html",
+    "frontend:dev": "parcel build src/index.html --public-url .",
+    "frontend:prod": "parcel build src/index.html --public-url . --no-source-maps",
+    "init": "npm install && virtualenv -p python3 venv-pywebview && run-script-os",
+    "init:windows": "call venv-pywebview/Scripts/activate.bat; pip install -r requirements.txt;",
+    "init:default": "source ./venv-pywebview/bin/activate && pip install -r requirements.txt;",
+    "start": "npm run frontend:dev && run-script-os",
+    "start:windows": "call venv-pywebview/Scripts/activate.bat; python src/index.py",
+    "start:default": "source venv-pywebview/bin/activate; python src/index.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r0x0r/pywebview-react-boilerplate.git"
+  },
+  "keywords": [
+    "pywebview",
+    "react",
+    "python",
+    "javascript"
+  ],
+  "author": "Roman Sirokov",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/r0x0r/pywebview-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/r0x0r/pywebview-react-boilerplate#readme",
+  "dependencies": {
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.12.4",
+    "run-script-os": "1.0.7",
+    "sass": "1.25.0",
+    "typescript": "^3.7.5"
+  }
+}

@@ -1,0 +1,33 @@
+.header-container {
+  border-bottom: 1px solid #eaecef;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: flex-start;
+
+  h2 {
+    font-size: 16pt;
+    margin: 6px;
+  }
+
+  .logo {
+    height: 2.2rem;
+  }
+
+  .fullscreen-button {
+    background: none;
+    border: 0;
+    font-size: 14pt;
+    margin: auto 0 auto auto;
+  }
+
+  a:link, a:visited {
+    color: inherit;
+    font-size: 12pt;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+  }
+
+  a:hover {
+    border-bottom: 2px solid #46bd87;
+  }
+}
