@@ -13,14 +13,7 @@
     height: 2.2rem;
   }
 
-  .fullscreen-button {
-    background: none;
-    border: 0;
-    font-size: 14pt;
-    margin: auto 0 auto auto;
-  }
-
-  a:link, a:visited {
+  a:link, a:visited, a:focus {
     color: inherit;
     font-size: 12pt;
     text-decoration: none;

@@ -7,14 +7,10 @@ from time import time
 
 class Api:
     def fullscreen(self):
-        print('fullscreen')
         webview.windows[0].toggle_fullscreen()
 
     def save_content(self, content):
-        print(1)
         filename = webview.windows[0].create_file_dialog(webview.SAVE_DIALOG)
-        print(filename)
-
         if not filename:
             return
 
@@ -29,14 +25,14 @@ def get_entrypoint():
     def exists(path):
         return os.path.exists(os.path.join(os.path.dirname(__file__), path))
 
-    if exists('../dist/index.html'): # unfrozen development
-        return '../dist/index.html'
+    if exists('../gui/index.html'): # unfrozen development
+        return '../gui/index.html'
 
-    if exists('../Resources/dist/index.html'): # frozen py2app
-        return '../Resources/dist/index.html'
+    if exists('../Resources/gui/index.html'): # frozen py2app
+        return '../Resources/gui/index.html'
 
-    if exists('../dist/index.html'): # TODO pyinstaller
-        return '../dist/index.html'
+    if exists('./gui/index.html'):
+        return './gui/index.html'
 
     raise Exception('No index.html found')
 
@@ -63,7 +59,8 @@ entry = get_entrypoint()
 
 @set_interval(1)
 def update_ticker():
-     webview.windows[0].evaluate_js('window.pywebview.setTicker("%d")' % time())
+    if len(webview.windows) > 0:
+        webview.windows[0].evaluate_js('window.pywebview.setTicker("%d")' % time())
 
 
 if __name__ == '__main__':

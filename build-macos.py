@@ -21,7 +21,7 @@ DATA_FILES = tree('dist')
 OPTIONS = {
     'argv_emulation': False,
     'strip': True,
-    'iconfile': 'icon.icns',
+    'iconfile': 'src/assets/logo.icns',
     'includes': ['WebKit', 'Foundation', 'webview', 'pkg_resources.py2_warn']
 }
 
