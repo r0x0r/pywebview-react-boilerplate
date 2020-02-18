@@ -15,7 +15,10 @@
     "frontend:prod": "parcel build src/index.html --public-url . --no-source-maps -d gui",
     "init": "npm install && run-script-os",
     "init:windows": "virtualenv -p python venv-pywebview && .\\venv-pywebview\\Scripts\\pip install -r requirements.txt",
+    "init:linux": "virtualenv -p python3 venv-pywebview && if [[ -z \"${KDE_FULL_SESSION}\" ]]; then npm run init:qt5; else npm run init:gtk; fi",
     "init:default": "virtualenv -p python3 venv-pywebview && ./venv-pywebview/bin/pip install -r requirements.txt",
+    "init:qt5": "./venv-pywebview/bin/pip install pyqt5 pyqtwebengine -r requirements.txt",
+    "init:gtk": "sudo apt install libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0 && ./venv-pywebview/bin/pip install pycairo pygobject -r requirements.txt",
     "start": "npm run frontend:dev && run-script-os",
     "start:windows": ".\\venv-pywebview\\Scripts\\python src\\index.py",
     "start:default": "./venv-pywebview/bin/python src/index.py"

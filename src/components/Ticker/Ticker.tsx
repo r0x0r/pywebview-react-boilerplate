@@ -1,3 +1,5 @@
+/* global pywebview */
+
 import * as React from 'react'
 
 import './Ticker.scss'
@@ -9,8 +11,11 @@ export default function Ticker() {
 
   React.useEffect(() => {
     window.addEventListener('pywebviewready', function() {
+      if (!window.pywebview.state) {
+        window.pywebview.state = {}
+      }
       // Expose setTicker in order to call it from Python
-      window.pywebview.setTicker = setTicker
+      window.pywebview.state.setTicker = setTicker
   })
   }, [])
 
