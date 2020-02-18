@@ -1,5 +1,4 @@
 *.pyc
-*.spec
 *.sh
 setup.cfg
 pywebview.egg-info
