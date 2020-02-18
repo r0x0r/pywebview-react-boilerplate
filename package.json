@@ -7,6 +7,7 @@
     "build": "npm run clean && npm run frontend:prod && run-script-os",
     "build:macos": "./venv-pywebview/bin/python build-macos.py py2app",
     "build:windows": ".\\venv-pywebview\\Scripts\\pyinstaller build-windows.spec",
+    "build:linux": "./venv-pywebview/bin/pyinstaller build-linux.spec --onefile",
     "clean": "run-script-os",
     "clean:default": "rm -rf dist 2>/dev/null; rm -rf gui 2>/dev/null; rm -rf build 2>/dev/null; ",
     "clean:windows": "if exist dist rd /S /Q dist & if exist build rd /S /Q build & if exist gui rd /S /Q gui",
