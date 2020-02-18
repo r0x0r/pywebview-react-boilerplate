@@ -12,18 +12,18 @@ _pywebview_ lets you build GUI for your Python program with JavaScript, HTML, an
 npm run init
 ```
 
-This will create a virtual environment, install pip and Node dependencies. Alternatively you can perform these steps manually
+This will create a virtual environment, install pip and Node dependencies. Alternatively you can perform these steps manually.
 
 ``` bash
 npm install
 pip -r requirements.txt
 ```
 
-On Linux systems installation system makes  educational guesses. If run under KDE, QT dependencies are installed, otherwise GTK is chosen. `apt` is used for installing GTK dependencies. If you are running a non apt-based system, then you will have to install GTK dependencies manually. Suggestions on how to improve installation on Linux are welcomed.
+On Linux systems installation system makes educated guesses. If you run KDE, QT dependencies are installed, otherwise GTK is chosen. `apt` is used for installing GTK dependencies. In case you are running a non apt-based system, you will have to install GTK dependencies manually. See [installation](https://pywebview.flowrl.com/guide/installation.html) for details.
 
 ## Usage
 
-To launch application
+To launch the application.
 
 ``` bash
 npm run start
@@ -35,7 +35,7 @@ To build an executable. The output binary will be produced in the `dist` directo
 npm run build
 ```
 
-To start a development server (only for testing frontend code)
+To start a development server (only for testing frontend code).
 
 ``` bash
 npm run dev
