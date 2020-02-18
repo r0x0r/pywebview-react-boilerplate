@@ -1,5 +1,5 @@
 # pywebview-react-boilerplate
-_pywebview_ lets you build GUI for your Python program with JavaScript, HTML, and CSS. This is a  simple boilerplate to help you start with pywebview and React. It sets up the development environment, install dependencies, as well as provides scripts for building an executable. Stack is based on pywebview, React, SASS, Parcel bundler, pyinstaller (Windows/Linux) and py2app (macOS).
+This is a  simple boilerplate to help you start with _pywebview_ and React. It sets up the development environment, install dependencies, as well as provides scripts for building an executable. Stack is based on pywebview, React, SASS, Parcel bundler, pyinstaller (Windows/Linux) and py2app (macOS).
 
 ## Requirements
 - Python 3
