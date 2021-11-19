@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run clean && npm run frontend:prod && run-script-os",
     "build:macos": "./venv-pywebview/bin/python build-macos.py py2app",
-    "build:windows": ".\\venv-pywebview\\Scripts\\pyinstaller build-windows.spec",
+    "build:windows": ".\\venv-pywebview\\Scripts\\pyinstaller --onefile build-windows.spec",
     "build:linux": "./venv-pywebview/bin/pyinstaller build-linux.spec --onefile",
     "clean": "run-script-os",
     "clean:default": "rm -rf dist 2>/dev/null; rm -rf gui 2>/dev/null; rm -rf build 2>/dev/null; ",
