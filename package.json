@@ -7,7 +7,7 @@
     "build": "npm run clean && npm run frontend:prod && run-script-os",
     "build:macos": "./venv-pywebview/bin/python build-macos.py py2app",
     "build:windows": ".\\venv-pywebview\\Scripts\\pyinstaller build-windows.spec",
-    "build:linux": "./venv-pywebview/bin/pyinstaller build-linux.spec --onefile",
+    "build:linux": "./venv-pywebview/bin/pyinstaller build-linux.spec",
     "clean": "run-script-os",
     "clean:default": "rm -rf dist 2>/dev/null; rm -rf gui 2>/dev/null; rm -rf build 2>/dev/null; ",
     "clean:windows": "if exist dist rd /S /Q dist & if exist build rd /S /Q build & if exist gui rd /S /Q gui",
@@ -41,13 +41,13 @@
   },
   "homepage": "https://github.com/r0x0r/pywebview-react-boilerplate#readme",
   "dependencies": {
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "parcel-bundler": "1.12.4",
-    "run-script-os": "1.0.7",
-    "sass": "1.25.0",
-    "typescript": "^3.7.5"
+    "parcel-bundler": "^1.12.5",
+    "run-script-os": "^1.1.6",
+    "sass": "^1.63.6",
+    "typescript": "^5.1.6"
   }
 }
