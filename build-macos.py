@@ -17,17 +17,20 @@ if os.path.exists('dist/index.app'):
 
 ENTRY_POINT = ['src/index.py']
 
-DATA_FILES = tree('dist')
+DATA_FILES = tree('gui')
 OPTIONS = {
     'argv_emulation': False,
-    'strip': True,
+    'strip': False,
     'iconfile': 'src/assets/logo.icns',
-    'includes': ['WebKit', 'Foundation', 'webview', 'pkg_resources.py2_warn']
+    'packages': ['WebKit', 'Foundation', 'webview'],
+    'plist': {
+        'NSRequiresAquaSystemAppearance': False
+    },
+    'resources': DATA_FILES
 }
 
 setup(
     app=ENTRY_POINT,
-    data_files=DATA_FILES,
     options={'py2app': OPTIONS},
     setup_requires=['py2app'],
 )
