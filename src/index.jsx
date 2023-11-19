@@ -5,7 +5,7 @@ import Header from './components/Header/Header'
 import Editor from './components/Editor/Editor'
 import Ticker from './components/Ticker/Ticker'
 
-import './index.scss'
+import './index.css'
 
 const App = function() {
   return (

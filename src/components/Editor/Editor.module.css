@@ -1,0 +1,28 @@
+.editorContainer {
+  padding: 0 3rem;
+  text-align: center;
+}
+
+.textarea {
+  width: 30rem;
+  height: 10rem;
+  margin: 2rem;
+  color: #2c3e50;
+}
+
+.button {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #3eaf7c;
+  padding: .8rem 1.6rem;
+  border-radius: 4px;
+  transition: background-color .1s ease;
+  box-sizing: border-box;
+  border-bottom: 1px solid #389d70;
+}
+
+
+.button &:hover {
+  background-color: #4abf8a;
+}

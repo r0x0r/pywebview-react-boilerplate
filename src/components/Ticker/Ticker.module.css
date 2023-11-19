@@ -1,0 +1,18 @@
+.tickerContainer {
+  text-align: center;
+  margin: 3rem auto 1rem auto;
+}
+
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.details {
+  display: block;
+  max-width: 35rem;
+  margin: 2rem auto 1rem auto;
+  font-size: 12pt;
+  text-decoration: none;
+  color: initial;
+}

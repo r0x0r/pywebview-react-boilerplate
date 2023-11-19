@@ -24,3 +24,24 @@
        url('./assets/roboto-condensed-v18-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
 }
 /* roboto-condensed-700 - latin_cyrillic */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14pt;
+  line-height: 130%;
+  color: #2c3e50;
+  background-color: white;
+}
+
+textarea {
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14pt;
+  padding: 0.6rem;
+}
+
+
+h1, h2, h3 {
+  font-family: 'Roboto Condensed', 'Helvetica Neue', sans-serif;
+}
