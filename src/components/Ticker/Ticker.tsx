@@ -1,20 +1,9 @@
-import * as React from 'react'
+import { usePythonState } from '../../hooks/pythonBridge'
 
 import styles from './Ticker.module.css'
-import logo from '../../assets/logo.png'
 
 export default function Ticker() {
-  const [ticker, setTicker] = React.useState('')
-
-  React.useEffect(() => {
-    window.addEventListener('pywebviewready', function() {
-      if (!window.pywebview.state) {
-        window.pywebview.state = {}
-      }
-      // Expose setTicker in order to call it from Python
-      window.pywebview.state.setTicker = setTicker
-  })
-  }, [])
+  const ticker = usePythonState('ticker')
 
   return (
     <div className={styles.tickerContainer}>
