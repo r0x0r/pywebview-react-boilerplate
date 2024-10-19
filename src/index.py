@@ -60,7 +60,7 @@ entry = get_entrypoint()
 @set_interval(1)
 def update_ticker():
     if len(webview.windows) > 0:
-        webview.windows[0].evaluate_js('window.pywebview.state.setTicker("%d")' % time())
+        webview.windows[0].evaluate_js('window.pywebview.state?.setTicker?.("%d")' % time())
 
 
 if __name__ == '__main__':

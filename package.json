@@ -2,7 +2,6 @@
   "name": "pywebview-react-boilerplate",
   "version": "1.0.0",
   "description": "A simple boilerplate to get started with pywebview and React",
-  "main": "index.js",
   "scripts": {
     "build": "npm run clean && npm run frontend:prod && run-script-os",
     "build:macos": "./venv-pywebview/bin/python build-macos.py py2app",
@@ -12,8 +11,8 @@
     "clean:default": "rm -rf dist 2>/dev/null; rm -rf gui 2>/dev/null; rm -rf build 2>/dev/null; ",
     "clean:windows": "if exist dist rd /S /Q dist & if exist build rd /S /Q build & if exist gui rd /S /Q gui",
     "dev": "parcel serve src/index.html",
-    "frontend:dev": "parcel build src/index.html --public-url . -d gui",
-    "frontend:prod": "parcel build src/index.html --public-url . --no-source-maps -d gui",
+    "frontend:dev": "parcel build src/index.html --public-url . --no-optimize --dist-dir gui",
+    "frontend:prod": "parcel build src/index.html --public-url . --no-source-maps --dist-dir gui",
     "init": "npm install && run-script-os",
     "init:windows": "virtualenv -p python venv-pywebview && .\\venv-pywebview\\Scripts\\pip install -r requirements.txt",
     "init:linux": "virtualenv -p python3 venv-pywebview && if [[ -z \"${KDE_FULL_SESSION}\" ]]; then npm run init:qt5; else npm run init:gtk; fi",
@@ -45,9 +44,12 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.5",
+    "@parcel/transformer-sass": "^2.12.0",
+    "parcel": "^2.12.0",
     "run-script-os": "^1.1.6",
     "sass": "^1.63.6",
-    "typescript": "^5.1.6"
+    "typescript": "^5.6.3",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1"
   }
 }
