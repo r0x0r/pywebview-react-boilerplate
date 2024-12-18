@@ -7,13 +7,14 @@
     "build": "npm run clean && npm run frontend:prod && run-script-os",
     "build:macos": "./venv-pywebview/bin/python build-macos.py py2app",
     "build:windows": ".\\venv-pywebview\\Scripts\\pyinstaller build-windows.spec",
-    "build:linux": "./venv-pywebview/bin/pyinstaller build-linux.spec",
+    "build:linux": "pyinstaller build-linux.spec",
     "clean": "run-script-os",
     "clean:default": "rm -rf dist 2>/dev/null; rm -rf gui 2>/dev/null; rm -rf build 2>/dev/null; ",
     "clean:windows": "if exist dist rd /S /Q dist & if exist build rd /S /Q build & if exist gui rd /S /Q gui",
-    "dev": "parcel serve src/index.html",
-    "frontend:dev": "parcel build src/index.html --public-url . -d gui",
-    "frontend:prod": "parcel build src/index.html --public-url . --no-source-maps -d gui",
+    "dev": "vite ",
+    "frontend:dev": "vite build --outDir gui --emptyOutDir",
+    "frontend:prod": "vite build --outDir gui --emptyOutDir --minify",
+    "frontend:preview": "vite preview --outDir gui --emptyOutDir",
     "init": "npm install && run-script-os",
     "init:windows": "virtualenv -p python venv-pywebview && .\\venv-pywebview\\Scripts\\pip install -r requirements.txt",
     "init:linux": "virtualenv -p python3 venv-pywebview && if [[ -z \"${KDE_FULL_SESSION}\" ]]; then npm run init:qt5; else npm run init:gtk; fi",
@@ -22,7 +23,7 @@
     "init:gtk": "sudo apt install libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0 && ./venv-pywebview/bin/pip install pycairo pygobject -r requirements.txt",
     "start": "npm run frontend:dev && run-script-os",
     "start:windows": ".\\venv-pywebview\\Scripts\\python src\\index.py",
-    "start:default": "./venv-pywebview/bin/python src/index.py"
+    "start:default": "python src/index.py"
   },
   "repository": {
     "type": "git",
@@ -45,9 +46,10 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.5",
+    "@vitejs/plugin-react": "^4.2.0",
     "run-script-os": "^1.1.6",
-    "sass": "^1.63.6",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vite": "^5.0.0",
+    "vite-tsconfig-paths": "^4.2.1"
   }
 }
